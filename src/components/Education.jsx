@@ -66,12 +66,14 @@ export default function Education({ resumeData, setResumeData }) {
                   type="text"
                   value={item.institution}
                   onChange={(e) => onChange(e, item.id)}
+                  placeholder="Education Institution"
                 />
                 <input
                   name="title"
                   type="text"
                   value={item.title}
                   onChange={(e) => onChange(e, item.id)}
+                  placeholder="Title"
                 />
               </div>
               <div className={styles.btnContainer}>
