@@ -27,8 +27,8 @@ export default function App() {
       {
         title: "BSc in Computer Science",
         institution: "University of Hong Kong",
-        startYear: "2008",
-        endYear: "2012",
+        startYear: "2008-09",
+        endYear: "2012-12",
       },
     ],
     career: [
