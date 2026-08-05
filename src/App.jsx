@@ -8,17 +8,17 @@ export default function App() {
     general: {
       firstName: "alex",
       lastName: "li",
-      birthday: "1989-07-14",
-      address: "lam tin, hong kong",
-      phone: "62785383",
-      email: "2012alexlst@gmail.com",
+      birthday: "1931-02-24",
+      address: "hong kong",
+      phone: "12345678",
+      email: "example@example.com",
     },
     education: [
       {
         id: "mock-edu-1",
         title: "BSc in Computer Science",
         institution: "University of Hong Kong",
-        startYear: "2008-09",
+        startYear: "2002-09",
         endYear: "2012-12",
       },
     ],
