@@ -16,8 +16,9 @@ export default function App() {
   //mock data and mock variable
   const mockData = {
     general: {
-      name: "alex",
-      birthday: "14/07/1989",
+      firstName: "alex",
+      lastName: "li",
+      birthday: "1989-07-14",
       address: "lam tin, hong kong",
       phone: "62785383",
       email: "2012alexlst@gmail.com",
