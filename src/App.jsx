@@ -35,8 +35,10 @@ export default function App() {
       {
         title: "Software Engineer",
         company: "Tech Corp",
-        startYear: "2012",
-        endYear: "2015",
+        startYear: "2012-01",
+        endYear: "2015-12",
+        description:
+          "Developed and maintained web applications using JavaScript and React.",
       },
     ],
     skills: [{ skill: "JavaScript", level: "Expert" }],
