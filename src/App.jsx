@@ -3,18 +3,7 @@ import InputForm from "./components/InputForm";
 import Submitted from "./components/Submitted";
 export default function App() {
   //write static page first, implement state after
-  // const [resumeData, setResumeData] = useState({
-  //   general: { name: "", birthday: "", address: "", phone: "", email: "" },
-  //   education: [],
-  //   career: [],
-  //   skills: [],
-  // });
-  // const [isSubmitted, setIsSubmitted] = useState(false);
-  // function toggleSubmit() {
-  //   setIsSubmitted((prev) => !prev);
-  // }
-  //mock data and mock variable
-  const mockData = {
+  const [resumeData, setResumeData] = useState({
     general: {
       firstName: "alex",
       lastName: "li",
@@ -47,14 +36,21 @@ export default function App() {
         description: "English:fluent, Chinese: native speaker",
       },
     ],
-  };
-  const isSubmitted = true;
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  function toggleSubmit() {
+    setIsSubmitted((prev) => !prev);
+  }
   return (
     <main>
       {isSubmitted ? (
-        <Submitted resumeData={mockData} />
+        <Submitted resumeData={resumeData} onEdit={toggleSubmit} />
       ) : (
-        <InputForm resumeData={mockData} />
+        <InputForm
+          resumeData={resumeData}
+          onSubmit={toggleSubmit}
+          setResumeData={setResumeData}
+        />
       )}
     </main>
   );

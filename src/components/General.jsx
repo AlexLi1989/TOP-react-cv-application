@@ -1,4 +1,12 @@
-export default function General({ resumeData }) {
+export default function General({ resumeData, setResumeData }) {
+  const onChange = (e) => {
+    setResumeData((prevData) => {
+      return {
+        ...prevData,
+        general: { ...prevData.general, [e.target.name]: e.target.value },
+      };
+    });
+  };
   return (
     <section className="general-info">
       <h2>General InFormation</h2>
@@ -8,6 +16,7 @@ export default function General({ resumeData }) {
         id="firstName"
         name="firstName"
         value={resumeData.general.firstName}
+        onChange={onChange}
       />
       <label htmlFor="lastName">Last Name :</label>
       <input
@@ -15,6 +24,7 @@ export default function General({ resumeData }) {
         id="lastName"
         name="lastName"
         value={resumeData.general.lastName}
+        onChange={onChange}
       />
       <label htmlFor="birthday">Birthday :</label>
       <input
@@ -22,6 +32,7 @@ export default function General({ resumeData }) {
         id="birthday"
         name="birthday"
         value={resumeData.general.birthday}
+        onChange={onChange}
       />
       <label htmlFor="address">Address :</label>
       <input
@@ -29,6 +40,7 @@ export default function General({ resumeData }) {
         id="address"
         name="address"
         value={resumeData.general.address}
+        onChange={onChange}
       />
       <label htmlFor="phone">Phone :</label>
       <input
@@ -36,6 +48,7 @@ export default function General({ resumeData }) {
         id="phone"
         name="phone"
         value={resumeData.general.phone}
+        onChange={onChange}
       />
       <label htmlFor="email">Email :</label>
       <input
@@ -43,6 +56,7 @@ export default function General({ resumeData }) {
         id="email"
         name="email"
         value={resumeData.general.email}
+        onChange={onChange}
       />
     </section>
   );

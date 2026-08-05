@@ -1,4 +1,4 @@
-export default function Submitted({ resumeData }) {
+export default function Submitted({ resumeData, onEdit }) {
   return (
     <div className="resume-container">
       <article className="resume-paper">
@@ -60,7 +60,7 @@ export default function Submitted({ resumeData }) {
           </ul>
         </section>
       </article>
-      <button>Edit</button>
+      <button onClick={onEdit}>Edit</button>
     </div>
   );
 }
