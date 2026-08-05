@@ -14,6 +14,7 @@ export default function App() {
     },
     education: [
       {
+        id: "mock-edu-1",
         title: "BSc in Computer Science",
         institution: "University of Hong Kong",
         startYear: "2008-09",

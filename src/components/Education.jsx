@@ -1,28 +1,86 @@
-export default function Education({ resumeData }) {
+export default function Education({ resumeData, setResumeData }) {
+  const onChange = (e, id) => {
+    setResumeData((prevData) => {
+      return {
+        ...prevData,
+        education: prevData.education.map((item) => {
+          if (item.id === id) {
+            return { ...item, [e.target.name]: e.target.value };
+          }
+          return item;
+        }),
+      };
+    });
+  };
+  const onRemove = (id) => {
+    setResumeData((prevData) => {
+      return {
+        ...prevData,
+        education: prevData.education.filter((item) => item.id !== id),
+      };
+    });
+  };
+  const onAdd = () => {
+    setResumeData((prevData) => {
+      return {
+        ...prevData,
+        education: [
+          ...prevData.education,
+          {
+            id: crypto.randomUUID(),
+            title: "",
+            institution: "",
+            startYear: "",
+            endYear: "",
+          },
+        ],
+      };
+    });
+  };
   return (
     <section className="education">
       <h2>Education</h2>
       <ul>
-        {resumeData.education.map((item, index) => {
+        {resumeData.education.map((item) => {
           return (
-            <li key={index} className="education-item">
+            <li key={item.id} className="education-item">
               <div className="education-date">
-                <input type="month" value={item.startYear} />
+                <input
+                  name="startYear"
+                  type="month"
+                  value={item.startYear}
+                  onChange={(e) => onChange(e, item.id)}
+                />
                 <span> - </span>
-                <input type="month" value={item.endYear} />
+                <input
+                  name="endYear"
+                  type="month"
+                  value={item.endYear}
+                  onChange={(e) => onChange(e, item.id)}
+                />
               </div>
               <div className="education-info">
-                <input type="text" value={item.institution} />
-                <input type="text" value={item.title} />
+                <input
+                  name="institution"
+                  type="text"
+                  value={item.institution}
+                  onChange={(e) => onChange(e, item.id)}
+                />
+                <input
+                  name="title"
+                  type="text"
+                  value={item.title}
+                  onChange={(e) => onChange(e, item.id)}
+                />
               </div>
               <div className="btn-container">
-                <button>Remove</button>
+                <button onClick={() => onRemove(item.id)}>Remove</button>
               </div>
             </li>
           );
         })}
       </ul>
-      <button>Add Education</button>
+      <button onClick={onAdd}>Add Education</button>
     </section>
   );
 }
