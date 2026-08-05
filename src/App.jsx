@@ -41,7 +41,12 @@ export default function App() {
           "Developed and maintained web applications using JavaScript and React.",
       },
     ],
-    skills: [{ skill: "JavaScript", level: "Expert" }],
+    skills: [
+      {
+        skill: "Language skills",
+        description: "English:fluent, Chinese: native speaker",
+      },
+    ],
   };
   const isSubmitted = false;
   return (

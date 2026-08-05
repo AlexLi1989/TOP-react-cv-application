@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Career from "./components/Career";
-import Education from "./components/Education";
-import General from "./components/General";
-import Skills from "./components/Skills";
+import Career from "./Career";
+import Education from "./Education";
+import General from "./General";
+import Skills from "./Skills";
 
 export default function App({ resumeData }) {
   return (
