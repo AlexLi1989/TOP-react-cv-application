@@ -1,3 +1,4 @@
+import styles from "../styles/career.module.css";
 export default function Career({ resumeData, setResumeData }) {
   const onChange = (e, id) => {
     setResumeData((prevData) => {
@@ -39,13 +40,13 @@ export default function Career({ resumeData, setResumeData }) {
     });
   };
   return (
-    <section className="career">
+    <section className={styles.career}>
       <h2>Career</h2>
-      <ul>
+      <ul className={styles.careerList}>
         {resumeData.career.map((item) => {
           return (
-            <li key={item.id} className="career-item">
-              <div className="career-date">
+            <li key={item.id} className={styles.careerItem}>
+              <div className={styles.careerDate}>
                 <input
                   name="startYear"
                   type="month"
@@ -60,7 +61,7 @@ export default function Career({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="career-info">
+              <div className={styles.careerInfo}>
                 <input
                   type="text"
                   name="company"
@@ -84,14 +85,16 @@ export default function Career({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="btn-container">
+              <div className={styles.btnContainer}>
                 <button onClick={() => onRemove(item.id)}>Remove</button>
               </div>
             </li>
           );
         })}
       </ul>
-      <button onClick={onAdd}>Add Career</button>
+      <button onClick={onAdd} className={styles.addBtn}>
+        Add Career
+      </button>
     </section>
   );
 }

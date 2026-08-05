@@ -1,0 +1,59 @@
+.generalInfo {
+  background-color: var(--bg-card);
+  padding: clamp(16px, 4vw, 32px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.generalInfo h2 {
+  color: var(--text-dark);
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 18px);
+}
+
+
+.fieldGroup {
+  display: grid;
+  grid-template-columns: clamp(90px, 15vw, 140px) 1fr;
+  column-gap: 16px;
+  align-items: center;
+}
+
+.fieldGroup label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  text-align: right;
+}
+
+.fieldGroup input {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #fff;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.fieldGroup input:hover {
+  border-color: var(--text-muted);
+}
+
+.fieldGroup input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}

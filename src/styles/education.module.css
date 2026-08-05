@@ -1,0 +1,107 @@
+.education {
+  background-color: var(--bg-card);
+  padding: clamp(16px, 4vw, 32px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 24px);
+}
+
+.education h2 {
+  color: var(--text-dark);
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.educationList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.educationItem {
+  display: grid;
+  grid-template-columns: clamp(110px, 18vw, 180px) 1fr max-content;
+  column-gap: clamp(12px, 2.5vw, 24px);
+  row-gap: 12px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.educationItem:last-child {
+  border-bottom: none;
+}
+
+.educationDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.educationDate span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+.educationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.educationItem input {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #fff;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.educationItem input:hover {
+  border-color: var(--text-muted);
+}
+
+.educationItem input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+.btnContainer button {
+  background-color: #fee2e2;
+  color: #dc2626;
+  font-size: 0.875rem;
+  padding: 8px 14px;
+}
+
+.btnContainer button:hover {
+  background-color: #fca5a5;
+}
+
+.addBtn {
+  align-self: flex-start;
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+  border: 1px dashed var(--border-color);
+  margin-top: 8px;
+}
+
+.addBtn:hover {
+  background-color: var(--border-color);
+}

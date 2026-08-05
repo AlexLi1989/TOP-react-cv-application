@@ -1,3 +1,4 @@
+import styles from "../styles/education.module.css";
 export default function Education({ resumeData, setResumeData }) {
   const onChange = (e, id) => {
     setResumeData((prevData) => {
@@ -38,20 +39,20 @@ export default function Education({ resumeData, setResumeData }) {
     });
   };
   return (
-    <section className="education">
+    <section className={styles.education}>
       <h2>Education</h2>
       <ul>
         {resumeData.education.map((item) => {
           return (
-            <li key={item.id} className="education-item">
-              <div className="education-date">
+            <li key={item.id} className={styles.educationItem}>
+              <div className={styles.educationDate}>
                 <input
                   name="startYear"
                   type="month"
                   value={item.startYear}
                   onChange={(e) => onChange(e, item.id)}
                 />
-                <span> - </span>
+                <span> TO </span>
                 <input
                   name="endYear"
                   type="month"
@@ -59,7 +60,7 @@ export default function Education({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="education-info">
+              <div className={styles.educationInfo}>
                 <input
                   name="institution"
                   type="text"
@@ -73,14 +74,16 @@ export default function Education({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="btn-container">
+              <div className={styles.btnContainer}>
                 <button onClick={() => onRemove(item.id)}>Remove</button>
               </div>
             </li>
           );
         })}
       </ul>
-      <button onClick={onAdd}>Add Education</button>
+      <button className={styles.addBtn} onClick={onAdd}>
+        Add Education
+      </button>
     </section>
   );
 }

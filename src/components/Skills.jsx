@@ -1,3 +1,4 @@
+import styles from "../styles/skills.module.css";
 export default function Skills({ resumeData, setResumeData }) {
   const onChange = (e, id) => {
     setResumeData((prevData) => {
@@ -36,13 +37,13 @@ export default function Skills({ resumeData, setResumeData }) {
     });
   };
   return (
-    <section className="skills">
+    <section className={styles.skills}>
       <h2>Skills</h2>
-      <ul>
+      <ul className={styles.skillsList}>
         {resumeData.skills.map((item) => {
           return (
-            <li key={item.id} className="skills-item">
-              <div className="skills-title">
+            <li key={item.id} className={styles.skillsItem}>
+              <div className={styles.skillTitle}>
                 <input
                   type="text"
                   name="skill"
@@ -50,7 +51,7 @@ export default function Skills({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="skills-info">
+              <div className={styles.skillInfo}>
                 <textarea
                   cols="20"
                   rows="3"
@@ -60,14 +61,16 @@ export default function Skills({ resumeData, setResumeData }) {
                   onChange={(e) => onChange(e, item.id)}
                 />
               </div>
-              <div className="btn-container">
+              <div className={styles.btnContainer}>
                 <button onClick={() => onRemove(item.id)}>Remove</button>
               </div>
             </li>
           );
         })}
       </ul>
-      <button onClick={onAdd}>Add Skill</button>
+      <button onClick={onAdd} className={styles.addBtn}>
+        Add Skill
+      </button>
     </section>
   );
 }

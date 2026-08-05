@@ -1,6 +1,7 @@
 import { useState } from "react";
 import InputForm from "./components/InputForm";
 import Submitted from "./components/Submitted";
+import "./app.css";
 export default function App() {
   //write static page first, implement state after
   const [resumeData, setResumeData] = useState({
