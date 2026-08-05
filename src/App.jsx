@@ -23,6 +23,7 @@ export default function App() {
     ],
     career: [
       {
+        id: "mock-career-1",
         title: "Software Engineer",
         company: "Tech Corp",
         startYear: "2012-01",
@@ -33,6 +34,7 @@ export default function App() {
     ],
     skills: [
       {
+        id: "mock-skill-1",
         skill: "Language skills",
         description: "English:fluent, Chinese: native speaker",
       },
