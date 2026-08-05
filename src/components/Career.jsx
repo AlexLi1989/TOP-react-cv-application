@@ -53,7 +53,7 @@ export default function Career({ resumeData, setResumeData }) {
                   value={item.startYear}
                   onChange={(e) => onChange(e, item.id)}
                 />
-                <span> - </span>
+                <span> TO </span>
                 <input
                   name="endYear"
                   type="month"
