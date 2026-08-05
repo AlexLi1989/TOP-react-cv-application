@@ -48,7 +48,7 @@ export default function App() {
       },
     ],
   };
-  const isSubmitted = false;
+  const isSubmitted = true;
   return (
     <main>
       {isSubmitted ? (
